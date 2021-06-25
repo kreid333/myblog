@@ -1,0 +1,136 @@
+html {
+    box-sizing: border-box;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+body {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75vh;
+  background-image: url("../images/pexels-blaque-x-932638.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron-titleDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(75vh - 80px);
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron-title {
+  color: white;
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.jumbotron-text {
+  color: white;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  margin-bottom: 0;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: fit-content;
+  padding: 0px 20px;
+}
+
+.nav-link:hover {
+  color: white;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.filter button {
+  height: 50px;
+  width: fit-content;
+  background-color: white;
+  padding: 0px 20px;
+  color: #8d8d8d;
+  border: 1px solid #e6e6e6;
+  border-radius: 100px;
+  align-self: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.filter button:hover {
+  color: white;
+  background-color: #0c9482;
+}
+
+.content {
+  text-align: center;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  display: inline-block;
+  margin: 20px;
+  text-align: left;
+}
+
+.post-image {
+  height: 50%;
+  width: 500px;
+  object-fit: cover;
+}
+
+.post-content {
+  height: 50%;
+  padding: 20px;
+  background-color: white;
+}
+
+.post-title {
+  font-weight: 800;
+  margin: 15px 0px;
+}
+
+.footer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
