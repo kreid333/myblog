@@ -38,3 +38,11 @@
 .post-input label {
     margin-bottom: 10px;
 }
+
+#post-content {
+    max-height: 200px;
+}
+
+#submit-btn {
+    margin: 30px;
+}

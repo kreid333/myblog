@@ -18,7 +18,7 @@ html, body {
   margin: 0 auto;
 }
 
-.filter button {
+.button {
   height: 50px;
   width: fit-content;
   background-color: white;
@@ -30,7 +30,7 @@ html, body {
   transition: all 0.25s ease-in-out;
 }
 
-.filter button:hover {
+.button:hover {
   color: white;
   background-color: #0c9482;
 }

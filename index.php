@@ -2,9 +2,9 @@
 
 <div class="wrapper">
     <div class="filter">
-        <button>Tech</button>
-        <button>Photography</button>
-        <button>Travel</button>
+        <button class="button">Tech</button>
+        <button class="button">Photography</button>
+        <button class="button">Travel</button>
     </div>
     <div class="container">
         <main class="content">
