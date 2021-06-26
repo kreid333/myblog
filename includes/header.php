@@ -11,14 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="./assets/css/styles.css" rel="stylesheet">
+    <link href="./assets/css/header.css" rel="stylesheet">
+    <link href="./assets/css/footer.css" rel="stylesheet">
+    <link href="./assets/css/add-post.css" rel="stylesheet">
 </head>
 <body>
 <header class="jumbotron">
     <nav class="nav">
         <ul class="nav-links">
-            <li class="nav-link">Home</li>
-            <li class="nav-link">Add Post</li>
-            <li class="nav-link">Contact</li>
+            <li class="nav-link"><a href="index.php">Home</a></li>
+            <li class="nav-link"><a href="add-post.php">Add Post</a></li>
+            <li class="nav-link"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <div class="jumbotron-titleDiv">
@@ -26,3 +29,4 @@
         <span class="jumbotron-text"> A simple blog created by Kai Reid</span>
     </div>
 </header>
+<?php require "./config/database.php" ?>
