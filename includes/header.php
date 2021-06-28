@@ -29,4 +29,3 @@
         <span class="jumbotron-text"> A simple blog created by Kai Reid</span>
     </div>
 </header>
-<?php require "./config/database.php" ?>

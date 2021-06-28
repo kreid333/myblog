@@ -1,18 +1,18 @@
-<?php include './data/post-data.php'; ?>
-<?php foreach ($posts as $post) : ?>
+<?php include 'config/database.php'; ?>
+<?php
+$stmt = $conn->query('SELECT * FROM posts');
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
 
     <div class="post shadow-sm">
-        <img src="./assets/images/pexels-blaque-x-932638.jpg" alt="" class="post-image">
+        <img src="<?php echo $row['img'] ?>" alt="" class="post-image">
         <div class="post-content">
-            <small><?php $post['date'] ?></small>
-            <h2 class="post-title"><?php echo $post['title'] ?></h2>
-            <span><?php echo $post['content'] ?></span>
+            <small><?php echo $row['date'] ?></small>
+            <h2 class="post-title"><?php echo $row['title'] ?></h2>
+            <span><?php echo $row['content'] ?></span>
             <hr>
-            <small><?php
-                    for ($i = 0; $i < count($post['tags']); $i++) {
-                        echo $post['tags'][$i] ;
-                    } ?></small>
+            <small><?php echo $row['tag'] ?></small>
         </div>
     </div>
 
-<?php endforeach; ?>
+<?php } ?>
