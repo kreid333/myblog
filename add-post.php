@@ -44,6 +44,8 @@
 <?php include "./includes/footer.php" ?>
 <?php include "config/database.php" ?>
 
+<?php $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/myblog";?>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $img = $_POST["post-imgUrl"];
@@ -55,5 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO posts(img, title, date, content, tag) VALUES(:img, :title, :date, :content, :tag);";
     $stmt = $conn->prepare($sql);
     $stmt->execute(["img" => $img, "title" => $title, "date" => $date, "content" => $content, "tag" => $tag]);
+
+    header("Location: $base_url/index.php");
+    exit();
 }
 ?>
