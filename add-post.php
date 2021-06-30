@@ -50,10 +50,10 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         $_POST["post-imgUrl"] !== "" &&
-        $_POST["post-imgUrl"] !== "" &&
-        $_POST["post-imgUrl"] !== "" &&
-        $_POST["post-imgUrl"] !== "" &&
-        $_POST["post-imgUrl"] !== ""
+        $_POST["post-title"] !== "" &&
+        $_POST["post-date"] !== "" &&
+        $_POST["post-content"] !== "" &&
+        $_POST["post-tag"] !== ""
     ) {
         $img = $_POST["post-imgUrl"];
         $title = $_POST["post-title"];
