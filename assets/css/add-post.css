@@ -39,6 +39,10 @@
     margin-bottom: 10px;
 }
 
+.post-input input, .post-input textarea {
+    margin-bottom: 10px;
+}
+
 #post-content {
     max-height: 200px;
 }

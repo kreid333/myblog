@@ -1,8 +1,17 @@
 <?php include 'config/database.php'; ?>
+
 <?php
 $stmt = $conn->query('SELECT * FROM posts');
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+if ($stmt->rowCount() <= 0) { ?>
+    <div class="no-posts">
+        <h2>No posts available!</h2>
+        <span>Click the button below to publish the first post!</span>
+        <a href="add-post.php" class="button add-postBtn">Add Post</a>
+    </div>
+<?php } ?>
+
+<?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
 
     <div class="post shadow-sm">
         <img src="<?php echo $row['img'] ?>" alt="" class="post-image">

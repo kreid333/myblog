@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <main class="content">
-            <?php include "./templates/posts.php" ?>
+            <?php include "./templates/home.php" ?>
         </main>
     </div>
 </div>
