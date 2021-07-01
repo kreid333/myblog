@@ -14,11 +14,20 @@ if ($stmt->rowCount() <= 0) { ?>
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
 
     <div class="post shadow-sm">
+        <a href="post.php?id=<?php echo $row['id']; ?>" class="post-overlay">
+            <h3>View Post</h3>
+            <i class="fa fa-arrow-circle-right"></i>
+        </a>
         <img src="<?php echo $row['img'] ?>" alt="" class="post-image">
         <div class="post-content">
             <small><?php echo $row['date'] ?></small>
             <h2 class="post-title"><?php echo $row['title'] ?></h2>
-            <span><?php echo $row['content'] ?></span>
+            <span><?php if (strlen($row['content'] >= 255)) {
+                        echo substr($row['content'], 0, 254) . "...";
+                    } else {
+                        echo $row['content'];
+                    }
+                    ?></span>
             <hr>
             <small><?php echo $row['tag'] ?></small>
         </div>

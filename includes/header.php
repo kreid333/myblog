@@ -15,6 +15,7 @@
     <link href="./assets/css/footer.css" rel="stylesheet">
     <link href="./assets/css/add-post.css" rel="stylesheet">
     <link href="./assets/css/home.css" rel="stylesheet">
+    <link href="./assets/css/post.css" rel="stylesheet">
 </head>
 <body>
 <header class="jumbotron">
