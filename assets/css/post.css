@@ -1,8 +1,22 @@
 .single-post {
-    height: 100vh;
+    min-height: 100vh;
+    margin-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.single-postText {
+    margin-top: 1rem;
+}
+
+.single-postDate {
+    margin: 5px;
+}
+
+.single-postTitle {
+    margin-top: 0.5rem;
 }

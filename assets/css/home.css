@@ -13,6 +13,8 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
+    text-align: center;
+    width: fit-content;
 }
 
 .fa-arrow-circle-right {

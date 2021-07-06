@@ -1,0 +1,25 @@
+.my-postsAddPost {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-postsButtons {
+    padding: 10px;
+    width: fit-content;
+    margin: 5px;
+    border: 1px solid #e6e6e6;
+    text-decoration: none;
+    color: white;
+    background-color: #0c9482;
+}
+
+.my-postsButtons:hover {
+    color: white;
+}
+
+#delete {
+    background-color: red;
+}

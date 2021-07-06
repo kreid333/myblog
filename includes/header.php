@@ -16,13 +16,14 @@
     <link href="./assets/css/add-post.css" rel="stylesheet">
     <link href="./assets/css/home.css" rel="stylesheet">
     <link href="./assets/css/post.css" rel="stylesheet">
+    <link href="./assets/css/my-posts.css" rel="stylesheet">
 </head>
 <body>
 <header class="jumbotron">
     <nav class="nav">
         <ul class="nav-links">
             <li class="nav-link"><a href="index.php">Home</a></li>
-            <li class="nav-link"><a href="add-post.php">Add Post</a></li>
+            <li class="nav-link"><a href="my-posts.php">My Posts</a></li>
             <li class="nav-link"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
