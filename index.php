@@ -2,16 +2,38 @@
 <?php include 'config/database.php'; ?>
 
 <div class="wrapper">
-<?php
+    <?php
 
-$stmt = $conn->query('SELECT * FROM posts');
+    if (!empty($_GET)) {
+        $filter;
 
-if ($stmt->rowCount() > 0) { ?>
-    <div class="filter">
-        <a class="button">Tech</a>
-        <a class="button">Photography</a>
-        <a class="button">Travel</a>
-    </div>
+        if (isset($_GET['filter'])) {
+            $filter = $_GET['filter'];
+        }
+
+        if ($filter !== NULL || $filter !== "") {
+            $sql = 'SELECT * FROM posts WHERE tag = :filter';
+            $allposts = $conn->prepare($sql);
+            $allposts->execute(["filter" => strtoupper($filter)]);
+        }
+    } else {
+        $allposts = $conn->query('SELECT * FROM posts');
+    }
+    if ($allposts->rowCount() > 0) { ?>
+        <div class="filter">
+            <?php if (!empty($_GET)) { ?>
+                <a href="index.php" class="button">View All</a>
+            <?php } ?>
+            <form action="index.php" method="GET" class="my-form">
+                <input type="submit" name="filter" class="button" value="Tech">
+            </form>
+            <form action="index.php" method="GET" class="my-form">
+                <input type="submit" name="filter" class="button" value="Photography">
+            </form>
+            <form action="index.php" method="GET" class="my-form">
+                <input type="submit" name="filter" class="button" value="Travel">
+            </form>
+        </div>
     <?php } ?>
     <div class="container">
         <main class="content">
@@ -20,7 +42,7 @@ if ($stmt->rowCount() > 0) { ?>
 
             <?php
 
-            if ($stmt->rowCount() <= 0) { ?>
+            if ($allposts->rowCount() <= 0) { ?>
                 <div class="no-posts">
                     <h2>No posts available!</h2>
                     <span>Click the button below to publish the first post!</span>
@@ -28,7 +50,13 @@ if ($stmt->rowCount() > 0) { ?>
                 </div>
             <?php } ?>
 
-            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+            <?php if (isset($_GET['filter'])) { ?>
+                <h1 class="filter-title">
+                    <?php echo $filter; ?>
+                </h1>
+            <?php } ?>
+
+            <?php while ($row = $allposts->fetch(PDO::FETCH_ASSOC)) { ?>
 
                 <div class="post shadow-sm">
                     <a href="single-post.php?id=<?php echo $row['id']; ?>" class="post-overlay">

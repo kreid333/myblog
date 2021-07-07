@@ -10,3 +10,13 @@
 .fa-arrow-circle-right {
     font-size: 20px !important;
 }
+
+.my-form {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+}
+
+.filter-title {
+    /* display: inline-block; */
+}

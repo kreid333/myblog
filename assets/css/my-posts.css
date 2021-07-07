@@ -20,12 +20,6 @@
     color: white;
 }
 
-.my-postsDeleteForm {
-    display: inline-block;
-    width: fit-content;
-    height: fit-content;
-}
-
 #delete {
     background-color: red;
 }

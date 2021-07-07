@@ -29,7 +29,7 @@
                     <small><?php echo $row['date'] ?></small>
                     <h2 class="post-title"><?php echo $row['title'] ?></h2>
                     <a href="edit-post.php?id=<?php echo $row['id']; ?>" class="my-postsButtons">EDIT</a>
-                    <form action="delete.php" method="POST" class="my-postsDeleteForm">
+                    <form action="delete.php" method="POST" class="my-form">
                         <input type="hidden" name="delete_id" value="<?php echo $row['id'] ?>">
                         <input type="submit" name="delete" class="my-postsButtons" id="delete" value="DELETE">
                     </form>
