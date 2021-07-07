@@ -19,20 +19,26 @@ html, body {
 }
 
 .button {
+  text-decoration: none;
   height: 50px;
   width: fit-content;
   background-color: white;
   padding: 0px 20px;
+  margin: 0.5rem;
   color: #8d8d8d;
   border: 1px solid #e6e6e6;
   border-radius: 100px;
   align-self: center;
   transition: all 0.25s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:hover {
   color: white;
   background-color: #0c9482;
+  cursor: pointer;
 }
 
 .content {

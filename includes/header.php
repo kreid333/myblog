@@ -24,7 +24,7 @@
         <ul class="nav-links">
             <li class="nav-link"><a href="index.php">Home</a></li>
             <li class="nav-link"><a href="my-posts.php">My Posts</a></li>
-            <li class="nav-link"><a href="contact.php">Contact</a></li>
+            <li class="nav-link"><a href="login.php">Login</a></li>
         </ul>
     </nav>
     <div class="jumbotron-titleDiv">

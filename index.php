@@ -2,24 +2,29 @@
 <?php include 'config/database.php'; ?>
 
 <div class="wrapper">
+<?php
+
+$stmt = $conn->query('SELECT * FROM posts');
+
+if ($stmt->rowCount() > 0) { ?>
     <div class="filter">
-        <button class="button">Tech</button>
-        <button class="button">Photography</button>
-        <button class="button">Travel</button>
+        <a class="button">Tech</a>
+        <a class="button">Photography</a>
+        <a class="button">Travel</a>
     </div>
+    <?php } ?>
     <div class="container">
         <main class="content">
 
 
 
             <?php
-            $stmt = $conn->query('SELECT * FROM posts');
 
             if ($stmt->rowCount() <= 0) { ?>
                 <div class="no-posts">
                     <h2>No posts available!</h2>
                     <span>Click the button below to publish the first post!</span>
-                    <a href="add-post.php" class="button add-postBtn">Add Post</a>
+                    <a href="add-post.php" class="button">Add Post</a>
                 </div>
             <?php } ?>
 

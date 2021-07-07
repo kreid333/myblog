@@ -32,7 +32,7 @@
                             </select>
                         </div>
                         <div class="post-input">
-                            <button class="button" id="submit-btn">Submit</button>
+                            <button class="button" id="submit-btn" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

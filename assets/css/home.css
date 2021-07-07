@@ -7,16 +7,6 @@
     align-items: center;
 }
 
-.add-postBtn {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    width: fit-content;
-}
-
 .fa-arrow-circle-right {
     font-size: 20px !important;
 }

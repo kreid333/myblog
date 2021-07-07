@@ -19,6 +19,8 @@ $post = $stmt->fetch();
             <small class="single-postDate"><?php echo $post['date'] ?></small>
             <p class="single-postText"><?php echo $post['content'] ?></p>
             <span><?php echo $post['tag'] ?></span>
+            <br>
+            <a href="index.php" class="button">Go back</a>
         </div>
     </div>
 </div>
