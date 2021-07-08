@@ -30,7 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         function pageRedirect()
         {
-            $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/myblog";
+            if (getenv('JAWSDB_URL')) {
+                $base_url = "https://kai-myblog.herokuapp.com";
+            } else {
+                $base_url = "http://" . $_SERVER['SERVER_NAME'] . "/myblog";
+            }
             header("Location: $base_url/");
             exit();
         }
