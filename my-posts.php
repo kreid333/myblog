@@ -11,7 +11,8 @@
         <?php if (isset($_SESSION["id"])) { ?>
 
             <?php
-            $stmt = $conn->query('SELECT * FROM posts');
+            $stmt = $conn->prepare('SELECT * FROM posts WHERE user_id = :user_id');
+            $stmt->execute(["user_id" => $_SESSION["id"]]);
 
             if ($stmt->rowCount() <= 0) { ?>
                 <div class="no-posts">

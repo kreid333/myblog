@@ -75,9 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $content = $_POST["post-content"];
         $tag = $_POST["post-tag"];
 
-        $sql = "INSERT INTO posts(img, title, date, content, tag) VALUES(:img, :title, :date, :content, :tag);";
+        $sql = "INSERT INTO posts(user_id, username, img, title, date, content, tag) VALUES(:user_id, :username, :img, :title, :date, :content, :tag);";
         $stmt = $conn->prepare($sql);
-        $stmt->execute(["img" => $img, "title" => $title, "date" => $date, "content" => $content, "tag" => $tag]);
+        $stmt->execute(["user_id" => $_SESSION["id"], "username" => $_SESSION["username"], "img" => $img, "title" => $title, "date" => $date, "content" => $content, "tag" => $tag]);
 
         header("Location: $base_url/");
         exit();

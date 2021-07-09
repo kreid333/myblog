@@ -1,5 +1,8 @@
 <?php include "./includes/header.php" ?>
 <?php include 'config/database.php'; ?>
+<?php if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+} ?>
 
 <div class="wrapper">
     <?php
@@ -45,8 +48,13 @@
             if ($allposts->rowCount() <= 0) { ?>
                 <div class="no-posts">
                     <h2>No posts available!</h2>
-                    <span>Click the button below to publish the first post!</span>
-                    <a href="add-post.php" class="button">Add Post</a>
+                    <?php if (isset($_SESSION["id"])) { ?>
+                        <span>Click the button below to publish the first post!</span>
+                        <a href="add-post.php" class="button">Add Post</a>
+                    <?php } else { ?>
+                        <span>Click the button below to sign up for an account and publish the first post!</span>
+                        <a href="signup.php" class="button">Sign Up</a>
+                    <?php } ?>
                 </div>
             <?php } ?>
 
@@ -65,8 +73,8 @@
                     </a>
                     <img src="<?php echo $row['img'] ?>" alt="" class="post-image">
                     <div class="post-content">
-                        <small><?php echo $row['date'] ?></small>
                         <h2 class="post-title"><?php echo $row['title'] ?></h2>
+                        <p><?php echo "Posted by " . $row['username'] . " on " . $row['date'] ?></p>
                         <span><?php if (strlen($row['content'] >= 255)) {
                                     echo substr($row['content'], 0, 254) . "...";
                                 } else {

@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hash = $user["password"];
             if (password_verify($password, $hash)) {
                 $_SESSION["id"] = $user["user_id"];
+                $_SESSION["username"] = $user["username"];
                 header("Location: $base_url/");
                 exit();
             } else {

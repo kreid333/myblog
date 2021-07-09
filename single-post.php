@@ -16,6 +16,7 @@ $post = $stmt->fetch();
         <div class="single-post">
             <img src="<?php echo $post['img'] ?>" alt="Blog post image" class="post-image">
             <h2 class="single-postTitle"><?php echo $post['title'] ?></h2>
+            <span><?php echo "Posted by " . $post['username'] ?></span>
             <small class="single-postDate"><?php echo $post['date'] ?></small>
             <p class="single-postText"><?php echo $post['content'] ?></p>
             <span><?php echo $post['tag'] ?></span>
