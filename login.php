@@ -6,22 +6,18 @@
         <div class="container">
             <main class="add-post">
                 <div class="page">
-                    <h1 class="page-title">Sign Up</h1>
-                    <form action="signup.php" method="POST">
+                    <h1 class="page-title">Login</h1>
+                    <form action="login.php" method="POST">
                         <div class="input">
                             <label for="email-address">Email Address</label>
                             <input type="email" name="email-address">
-                        </div>
-                        <div class="input">
-                            <label for="username">Username</label>
-                            <input type="text" name="username">
                         </div>
                         <div class="input">
                             <label for="password">Password</label>
                             <input type="password" name="password">
                         </div>
                         <div class="input">
-                            <button type="submit" class="button" id="submit-btn">Create Account</button>
+                            <button type="submit" class="button" id="submit-btn">Sign In</button>
                         </div>
                     </form>
                 </div>
@@ -43,27 +39,32 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         $_POST["email-address"] !== "" &&
-        $_POST["username"] !== "" &&
         $_POST["password"] !== ""
     ) {
         session_unset();
         session_destroy();
         session_start();
         $email = $_POST["email-address"];
-        $username = $_POST["username"];
-        $hashedPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        $uuid = uniqid();
+        $password = $_POST["password"];
 
-        $sql = "INSERT INTO accounts(user_id, email, username, password) VALUES(:user_id, :email, :username, :password);";
+        $sql = "SELECT * FROM accounts WHERE email = :email";
         $stmt = $conn->prepare($sql);
         try {
-            $stmt->execute(["user_id" => $uuid, "email" => $email, "username" => $username, "password" => $hashedPassword]);
-            $_SESSION["id"] = $uuid;
-            header("Location: $base_url/");
-            exit();
+            $stmt->execute(["email" => $email]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $hash = $user["password"];
+            if (password_verify($password, $hash)) {
+                $_SESSION["id"] = $user["user_id"];
+                header("Location: $base_url/");
+                exit();
+            } else {
+                echo "<script>
+                alert('Invalid login credentials. Please try again.');
+                </script>";
+            }
         } catch (PDOException $e) {
             echo "<script>
-            alert('Email or Username already in use. Please try again.');
+            alert('Invalid login credentials. Please try again.');
             </script>";
         }
     } else {
