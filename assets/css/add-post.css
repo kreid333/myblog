@@ -28,21 +28,6 @@
     margin: 20px;
 }
 
-.post-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.post-input label {
-    margin-bottom: 10px;
-}
-
-.post-input input, .post-input textarea {
-    margin-bottom: 10px;
-}
-
 #post-content {
     max-height: 200px;
 }

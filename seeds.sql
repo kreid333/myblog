@@ -40,3 +40,11 @@ INSERT INTO posts(img, date, title, content, tag) VALUES(
     "I'm baby viral hoodie gentrify food truck, tumeric lomo crucifix succulents banjo hexagon organic wolf 3 wolf moon truffaut. Adaptogen bespoke helvetica disrupt kinfolk tumeric hella cardigan 3 wolf moon +1 try-hard pok pok. Put a bird on it heirloom godard, coloring book vinyl slow-carb aesthetic vape cliche ethical 3 wolf moon kale chips fixie woke cornhole. Yuccie vegan man bun gluten-free single-origin coffee, raw denim ennui prism umami before they sold out humblebrag williamsburg shoreditch. Vegan selfies fashion axe pok pok tbh viral, unicorn narwhal aesthetic hammock. Kogi scenester quinoa taiyaki green juice next level cray tousled tbh yuccie keytar pug.",
     "TRAVEL"
 );
+
+CREATE TABLE accounts (
+	id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id varchar(50) UNIQUE NOT NULL,
+    email varchar(100) UNIQUE NOT NULL,
+  	username varchar(50) UNIQUE NOT NULL,
+  	password varchar(255) UNIQUE NOT NULL
+);

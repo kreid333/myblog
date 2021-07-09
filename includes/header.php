@@ -1,3 +1,5 @@
+<?php include 'config/database.php'; ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,17 +20,23 @@
     <link href="./assets/css/post.css" rel="stylesheet">
     <link href="./assets/css/my-posts.css" rel="stylesheet">
 </head>
+
 <body>
-<header class="jumbotron">
-    <nav class="nav">
-        <ul class="nav-links">
-            <li class="nav-link"><a href="index.php">Home</a></li>
-            <li class="nav-link"><a href="my-posts.php">My Posts</a></li>
-            <li class="nav-link"><a href="login.php">Login</a></li>
-        </ul>
-    </nav>
-    <div class="jumbotron-titleDiv">
-        <h1 class="jumbotron-title">MyBlog</h1>
-        <span class="jumbotron-text"> A simple blog created by Kai Reid</span>
-    </div>
-</header>
+    <header class="jumbotron">
+        <nav class="nav">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.php">Home</a></li>
+                <?php if (!isset($_SESSION["id"])) { ?>
+                    <li class="nav-link"><a href="login.php">Login</a></li>
+                    <li class="nav-link"><a href="signup.php">Sign Up</a></li>
+                <?php } else { ?>
+                    <li class="nav-link"><a href="my-posts.php">My Posts</a></li>
+                    <li class="nav-link"><a href="signout.php">Sign Out</a></li>
+                <?php } ?>
+            </ul>
+        </nav>
+        <div class="jumbotron-titleDiv">
+            <h1 class="jumbotron-title">MyBlog</h1>
+            <span class="jumbotron-text"> A simple blog created by Kai Reid</span>
+        </div>
+    </header>

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         pageRedirect();
     } else {
         echo "<script>
-        alert('Please enter an image url!');
+        alert('Missing input. Please try again.');
         </script>";
     }
 }
@@ -55,23 +55,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="page">
                     <h1 class="page-title">Edit Post</h1>
                     <form action="edit-post.php?id=<?php echo $id ?>" method="POST">
-                        <div class="post-input">
+                        <div class="input">
                             <label for="post-imgUrl">Post Image URL</label>
                             <input type="text" name="post-imgUrl" id="post-imgUrl" value="<?php echo $post['img'] ?>">
                         </div>
-                        <div class="post-input">
+                        <div class="input">
                             <label for="post-title">Post Title</label>
                             <input type="text" name="post-title" id="post-title" value="<?php echo $post['title'] ?>">
                         </div>
-                        <div class="post-input">
+                        <div class="input">
                             <label for="post-date">Post Date</label>
                             <input type="date" name="post-date" id="post-date" value="<?php echo $post['date'] ?>">
                         </div>
-                        <div class="post-input">
+                        <div class="input">
                             <label for="post-content">Post Content</label>
                             <textarea name="post-content" id="post-content" rows="4" cols="50"><?php echo $post['content'] ?></textarea>
                         </div>
-                        <div class="post-input">
+                        <div class="input">
                             <label for="post-tag">Tag</label>
                             <select name="post-tag">
                                 <option value="TECH" <?php if ($post['tag'] === "TECH") {
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         } ?>>Travel</option>
                             </select>
                         </div>
-                        <div class="post-input">
+                        <div class="input">
                             <button class="button" id="submit-btn">Submit</button>
                         </div>
                     </form>

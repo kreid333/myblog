@@ -102,3 +102,18 @@ html, body {
   font-weight: 800;
   margin: 15px 0px;
 }
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input label {
+  margin-bottom: 10px;
+}
+
+.input input, .input textarea {
+  margin-bottom: 10px;
+}
