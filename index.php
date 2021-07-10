@@ -5,6 +5,7 @@
 } ?>
 
 <div class="wrapper">
+
     <?php
 
     if (!empty($_GET)) {
@@ -48,17 +49,20 @@
             if ($allposts->rowCount() <= 0) { ?>
                 <div class="no-posts">
                     <h2>No posts available!</h2>
-                    <?php if (isset($_SESSION["id"])) { ?>
+                    <?php if (isset($_GET["filter"])) { ?>
+                        <span>No posts found with the "<?php echo $_GET['filter'] ?>" tag. </span>
+                        <a href="index.php" class="button">Go home</a>
+                    <?php } else if (isset($_SESSION["id"])) { ?>
                         <span>Click the button below to publish the first post!</span>
                         <a href="add-post.php" class="button">Add Post</a>
-                    <?php } else { ?>
+                    <?php } else if (!isset($_SESSION["id"])){ ?>
                         <span>Click the button below to sign up for an account and publish the first post!</span>
                         <a href="signup.php" class="button">Sign Up</a>
                     <?php } ?>
                 </div>
             <?php } ?>
 
-            <?php if (isset($_GET['filter'])) { ?>
+            <?php if (isset($_GET['filter']) && $allposts->rowCount() !== 0) { ?>
                 <h1 class="filter-title">
                     <?php echo $filter; ?>
                 </h1>
