@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute(["user_id" => $uuid, "email" => $email, "username" => $username, "password" => $hashedPassword]);
             $_SESSION["id"] = $uuid;
             $_SESSION["username"] = $username;
-            header("Location: $base_url/add-post.php");
+            header("Location: {$base_url}/add-post.php");
             exit();
         } catch (PDOException $e) {
             echo "<script>
